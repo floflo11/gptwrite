@@ -11,76 +11,15 @@ import csv
 st.set_page_config(page_title="GPT Write")
 
 
-html_temp = """
-                <div style="background-color:{};padding:1px">
-                
-                </div>
-                """
-
-
-
 
 input_text = None
-if 'output' not in st.session_state:
-    st.session_state['output'] = 0
 
-if st.session_state['output'] <=2:
-    st.markdown("""
-    # GPT Write
-    """)
-    input_text = st.text_input("Brainstorm ideas for", disabled=False, placeholder="What's on your mind?")
-    st.session_state['output'] = st.session_state['output'] + 1
-else:
-    # input_text = st.text_input("Brainstorm ideas for", disabled=True)
-    st.info("Thank you! Refresh for more brainstorming💡")
-    st.markdown('''
-    <a target="_blank" style="color: black" href="https://twitter.com/intent/tweet?text=I%20just%20used%20the%20Brainstorming%20Buddy%20streamlit%20helper%20tool%20by%20@nainia_ayoub!%0A%0Ahttps://brainstorming-buddy.streamlit.app/">
-        <button class="btn">
-            Tweet about this!
-        </button>
-    </a>
-    <style>
-    .btn{
-        display: inline-flex;
-        -moz-box-align: center;
-        align-items: center;
-        -moz-box-pack: center;
-        justify-content: center;
-        font-weight: 400;
-        padding: 0.25rem 0.75rem;
-        border-radius: 0.25rem;
-        margin: 0px;
-        line-height: 1.6;
-        color: #fff;
-        background-color: #00acee;
-        width: auto;
-        user-select: none;
-        border: 1px solid #00acee;
-        }
-    .btn:hover{
-        color: #00acee;
-        background-color: #fff;
-    }
-    </style>
-    ''',
-    unsafe_allow_html=True
-    )
+st.markdown("""
+# GPT Write
+""")
+input_text = st.text_input("Brainstorm ideas for", disabled=False, placeholder="What's on your mind?")
 
-hide="""
-<style>
-footer{
-	visibility: hidden;
-    position: relative;
-}
-.viewerBadge_container__1QSob{
-    visibility: hidden;
-}
-#MainMenu{
-	visibility: hidden;
-}
-<style>
-"""
-st.markdown(hide, unsafe_allow_html=True)
+# st.markdown(hide, unsafe_allow_html=True)
 
 
 st.markdown(
